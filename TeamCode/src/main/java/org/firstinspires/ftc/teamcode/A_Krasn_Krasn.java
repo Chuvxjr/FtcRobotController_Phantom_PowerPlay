@@ -45,8 +45,8 @@ public class A_Krasn_Krasn extends Methods {
     private static float offsetX = 0f / 8f;//changing this moves the three rects and the three circles left or right, range : (-2, 2) not inclusive
     private static float offsetY = 0f / 8f;//changing this moves the three rects and circles up or down, range: (-4, 4) not inclusive
 
-    private static float[] leftPos = {6.5f / 8f + offsetX, 4f / 8f + offsetY};
-    private static float[] rightPos = {5.5f / 8f + offsetX, 4 / 8f + offsetY};
+    private static float[] leftPos = {6.1f / 8f + offsetX, 4f / 8f + offsetY};
+    private static float[] rightPos = {5.3f / 8f + offsetX, 4 / 8f + offsetY};
 
     private final int rows = 640;
     private final int cols = 480;
@@ -79,45 +79,55 @@ public class A_Krasn_Krasn extends Methods {
 
             if (valLeft == 255) {
                 vikidish_castom(500);
-                vpered(270, 0.4);
-                razvarot(550, 0.3);
-                vpered(-230, 0.4);
-                vikidish_castom(-500);
+                vpered(620, 0.25);
+                sleep(250);
+                vlevo(300, 0.25);
+                vikidish_castom(3900);
+                vpered(120, 0.4);
+                stop_all();
+                sleep(2000);
                 vikidisch.setPower(0.5);
-                razvarot(-20, 0.4);
-                sleep(1000);
-                nazad(-120, 0.4);
-                vlevo(550, 0.4);
+                sleep(2000);
                 vikidisch.setPower(0.05);
-                vpered(500, 0.4);
+                nazad(130, 0.4);
+                vlevo(400, 0.25);
+                vpered(250, 0.3);
+                vikidish_castom(-4000);
                 sleep(30000);
             } else if (valRight == 255) {
                 vikidish_castom(500);
-                vpered(270, 0.4);
-                razvarot(550, 0.3);
-                vpered(-230, 0.4);
-                vikidish_castom(-500);
+                vpered(620, 0.25);
+                sleep(250);
+                vlevo(300, 0.25);
+                vikidish_castom(3900);
+                vpered(120, 0.4);
+                stop_all();
+                sleep(2000);
                 vikidisch.setPower(0.5);
-                razvarot(20, 0.4);
-                sleep(1000);
-                nazad(-120, 0.4);
-                vlevo(550, 0.4);
-                nazad(100, 0.4);
+                sleep(2000);
                 vikidisch.setPower(0.05);
+                nazad(130, 0.4);
+                vpravo(500, 0.25);
+                vpered(250, 0.3);
+                vikidish_castom(-4000);
                 sleep(30000);
             } else {
                 vikidish_castom(500);
-                vpered(270, 0.4);
-                razvarot(550, 0.3);
-                vpered(-230, 0.4);
-                vikidish_castom(-500);
+                vpered(620, 0.25);
+                sleep(250);
+                vlevo(300, 0.25);
+                vikidish_castom(3900);
+                vpered(120, 0.4);
+                stop_all();
+                sleep(2000);
                 vikidisch.setPower(0.5);
-                razvarot(20, 0.4);
-                sleep(1000);
-                nazad(-120, 0.4);
-                vlevo(550, 0.4);
+                sleep(2000);
                 vikidisch.setPower(0.05);
-                nazad(550, 0.4);
+                nazad(130, 0.4);
+                vpravo(500, 0.25);
+                vpravo(850, 0.25);
+                vpered(250, 0.3);
+                vikidish_castom(-4000);
                 sleep(30000);
             }
         }}
@@ -176,7 +186,7 @@ public class A_Krasn_Krasn extends Methods {
             Core.extractChannel(yCbCrChan2Mat, yCbCrChan2Mat, 2);//takes cb difference and stores
 
             //b&w
-            Imgproc.threshold(yCbCrChan2Mat, thresholdMat, 112, 255, Imgproc.THRESH_BINARY_INV);
+            Imgproc.threshold(yCbCrChan2Mat, thresholdMat, 80, 255, Imgproc.THRESH_BINARY_INV);
 
             //outline/contour
             Imgproc.findContours(thresholdMat, contoursList, new Mat(), Imgproc.RETR_LIST, Imgproc.CHAIN_APPROX_SIMPLE);

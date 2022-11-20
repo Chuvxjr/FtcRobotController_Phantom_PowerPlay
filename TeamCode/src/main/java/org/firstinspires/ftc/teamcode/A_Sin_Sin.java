@@ -76,49 +76,59 @@ public class A_Sin_Sin extends Methods {
             telemetry.addData("Values", valLeft + "  " + valRight);
             telemetry.update();
             vikidisch.setPower(0.05);
+            sleep (150);
 
             if (valLeft == 255) {
                 vikidish_castom(500);
-                vpered(500, 0.4);
-                vlevo(330, 0.4);
-                vikidish_castom(3300);
-                vpered(150, 0.4);
+                vpered(770, 0.25);
+                sleep(250);
+                vlevo(330, 0.25);
+                vikidish_castom(3900);
+                vpered(120, 0.4);
+                stop_all();
+                sleep(2000);
                 vikidisch.setPower(0.5);
                 sleep(2000);
                 vikidisch.setPower(0.05);
-                nazad(100, 0.4);
-                vlevo(450, 0.4);
+                nazad(130, 0.4);
+                vlevo(400, 0.25);
+                vpered(250, 0.3);
+                vikidish_castom(-4000);
                 sleep(30000);
             } else if (valRight == 255) {
                 vikidish_castom(500);
-                vpered(500, 0.4);
-                vlevo(330, 0.4);
-                vikidish_castom(3300);
-                vpered(150, 0.4);
-                vikidisch.setPower(0.5);
-                sleep(2000);
-                vikidisch.setPower(0.05);
-                nazad(100, 0.4);
-                vpravo(300, 0.4);
-                nazad(100, 0.4);
-                sleep(30000);
-            } else {
-                vikidish_castom(500);
-                vpered(350, 0.25);
+                vpered(770, 0.25);
                 sleep(250);
-                vlevo(550, 0.25);
-                vikidish_castom(3500);
-                vpered(170, 0.4);
+                vlevo(330, 0.25);
+                vikidish_castom(3900);
+                vpered(120, 0.4);
                 stop_all();
-                sleep(200);
+                sleep(2000);
                 vikidisch.setPower(0.5);
                 sleep(2000);
                 vikidisch.setPower(0.05);
                 nazad(130, 0.4);
                 vpravo(500, 0.25);
-                vpravo(750, 0.25);
-                vpered(150, 0.3);
-                vikidish_castom(-3800);
+                vpered(250, 0.3);
+                vikidish_castom(-4000);
+                sleep(30000);
+            } else {
+                vikidish_castom(500);
+                vpered(770, 0.25);
+                sleep(250);
+                vlevo(330, 0.25);
+                vikidish_castom(3900);
+                vpered(120, 0.4);
+                stop_all();
+                sleep(2000);
+                vikidisch.setPower(0.5);
+                sleep(2000);
+                vikidisch.setPower(0.05);
+                nazad(130, 0.4);
+                vpravo(500, 0.25);
+                vpravo(850, 0.25);
+                vpered(250, 0.3);
+                vikidish_castom(-4000);
                 sleep(30000);
             }
         }}
