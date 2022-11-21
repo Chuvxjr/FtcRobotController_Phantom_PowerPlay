@@ -29,9 +29,9 @@ import java.util.List;
  * monitor: 640 x 480
  *YES
  */
-@Autonomous(name= "A_Krasn_Krasn", group="Autonomous")
+@Autonomous(name= "A_Sin_Sin_Viktor", group="Autonomous")
 //
-public class A_Krasn_Krasn extends Methods {
+public class A_Sin_Sin_Viktor extends Methods {
     private final ElapsedTime runtime = new ElapsedTime();
 
 
@@ -45,8 +45,8 @@ public class A_Krasn_Krasn extends Methods {
     private static float offsetX = 0f / 8f;//changing this moves the three rects and the three circles left or right, range : (-2, 2) not inclusive
     private static float offsetY = 0f / 8f;//changing this moves the three rects and circles up or down, range: (-4, 4) not inclusive
 
-    private static float[] leftPos = {6.1f / 8f + offsetX, 4f / 8f + offsetY};
-    private static float[] rightPos = {5.3f / 8f + offsetX, 4 / 8f + offsetY};
+    private static float[] leftPos = {6f / 8f + offsetX, 4f / 8f + offsetY};
+    private static float[] rightPos = {5.1f / 8f + offsetX, 4 / 8f + offsetY};
 
     private final int rows = 640;
     private final int cols = 480;
@@ -76,68 +76,63 @@ public class A_Krasn_Krasn extends Methods {
             telemetry.addData("Values", valLeft + "  " + valRight);
             telemetry.update();
             vikidisch.setPower(0.05);
+            sleep (150);
 
             if (valLeft == 255) {
                 vikidish_castom(500);
-                vpered(730, 0.25);
-                sleep(1000);
-                nazad(70, 0.25);
+                vpered(700, 0.25);
                 sleep(250);
-                vpravo(390, 0.25);
+                vlevo(370, 0.25);
                 vikidish_castom(3900);
-                vpered(170, 0.4);
+                vpered(100, 0.4);
+                vpered(200, 0.25);
+                nazad(100, 0.25);
                 stop_all();
                 sleep(2000);
-                vikidish_castom(-1000);
                 vikidisch.setPower(0.5);
                 sleep(2000);
-                nazad(170, 0.4);
-                vikidish_castom(1000);
                 vikidisch.setPower(0.05);
-                vpravo(400, 0.25);
+                nazad(220, 0.4);
+                vlevo(400, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
                 sleep(30000);
             } else if (valRight == 255) {
                 vikidish_castom(500);
-                vpered(730, 0.25);
-                sleep(1000);
-                nazad(70, 0.25);
+                vpered(700, 0.25);
                 sleep(250);
-                vpravo(390, 0.25);
+                vlevo(370, 0.25);
                 vikidish_castom(3900);
-                vpered(170, 0.4);
+                vpered(100, 0.4);
+                vpered(200, 0.25);
+                nazad(100, 0.25);
                 stop_all();
                 sleep(2000);
-                vikidish_castom(-1000);
                 vikidisch.setPower(0.5);
                 sleep(2000);
-                nazad(170, 0.4);
-                vikidish_castom(1000);
                 vikidisch.setPower(0.05);
-                vlevo(500, 0.25);
+                nazad(220, 0.4);
+                vpravo(500, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
                 sleep(30000);
             } else {
                 vikidish_castom(500);
-                vpered(730, 0.25);
-                sleep(1000);
-                nazad(70, 0.25);
+                vpered(700, 0.25);
                 sleep(250);
-                vpravo(390, 0.25);
+                vlevo(370, 0.25);
                 vikidish_castom(3900);
-                vpered(170, 0.4);
+                vpered(100, 0.4);
+                vpered(200, 0.25);
+                nazad(100, 0.25);
                 stop_all();
                 sleep(2000);
-                vikidish_castom(-1000);
                 vikidisch.setPower(0.5);
                 sleep(2000);
-                nazad(170, 0.4);
-                vikidish_castom(1000);
                 vikidisch.setPower(0.05);
-                vlevo(500, 0.25);
-                vlevo(850, 0.25);
+                nazad(220, 0.4);
+                vpravo(500, 0.25);
+                vpravo(850, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
                 sleep(30000);
@@ -198,7 +193,7 @@ public class A_Krasn_Krasn extends Methods {
             Core.extractChannel(yCbCrChan2Mat, yCbCrChan2Mat, 2);//takes cb difference and stores
 
             //b&w
-            Imgproc.threshold(yCbCrChan2Mat, thresholdMat, 80, 255, Imgproc.THRESH_BINARY_INV);
+            Imgproc.threshold(yCbCrChan2Mat, thresholdMat, 100, 255, Imgproc.THRESH_BINARY_INV);
 
             //outline/contour
             Imgproc.findContours(thresholdMat, contoursList, new Mat(), Imgproc.RETR_LIST, Imgproc.CHAIN_APPROX_SIMPLE);

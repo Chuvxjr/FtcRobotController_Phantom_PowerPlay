@@ -29,9 +29,9 @@ import java.util.List;
  * monitor: 640 x 480
  *YES
  */
-@Autonomous(name= "A_Krasn_Krasn", group="Autonomous")
+@Autonomous(name= "A_Krasn_Krasn_Viktor", group="Autonomous")
 //
-public class A_Krasn_Krasn extends Methods {
+public class A_Krasn_Krasn_Viktor extends Methods {
     private final ElapsedTime runtime = new ElapsedTime();
 
 
@@ -86,6 +86,8 @@ public class A_Krasn_Krasn extends Methods {
                 vpravo(390, 0.25);
                 vikidish_castom(3900);
                 vpered(170, 0.4);
+                vpered(200, 0.25);
+                nazad(100, 0.25);
                 stop_all();
                 sleep(2000);
                 vikidish_castom(-1000);
@@ -107,6 +109,8 @@ public class A_Krasn_Krasn extends Methods {
                 vpravo(390, 0.25);
                 vikidish_castom(3900);
                 vpered(170, 0.4);
+                vpered(200, 0.25);
+                nazad(100, 0.25);
                 stop_all();
                 sleep(2000);
                 vikidish_castom(-1000);
@@ -128,6 +132,8 @@ public class A_Krasn_Krasn extends Methods {
                 vpravo(390, 0.25);
                 vikidish_castom(3900);
                 vpered(170, 0.4);
+                vpered(200, 0.25);
+                nazad(100, 0.25);
                 stop_all();
                 sleep(2000);
                 vikidish_castom(-1000);
