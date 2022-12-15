@@ -61,12 +61,11 @@ public class A_Sin_Sin extends Methods {
         leftB = hardwareMap.dcMotor.get("lr");
         rightF = hardwareMap.dcMotor.get("rf");
         rightB = hardwareMap.dcMotor.get("rr");
-        krut = hardwareMap.dcMotor.get("kr");
-        vobla = hardwareMap.dcMotor.get("vl");
-        zaxvat = hardwareMap.crservo.get("zx");
-        vikidisch = hardwareMap.crservo.get("vs");
+        pisun = hardwareMap.crservo.get("pis");
         pod = hardwareMap.dcMotor.get("pod");
-        sos = hardwareMap.dcMotor.get("sos");
+        drin = hardwareMap.dcMotor.get("drin");
+        big = hardwareMap.crservo.get("big");
+        zaxvat = hardwareMap.crservo.get("zx");
 
         initGyro();
         waitForStart();
@@ -75,7 +74,6 @@ public class A_Sin_Sin extends Methods {
         while (opModeIsActive()) {
             telemetry.addData("Values", valLeft + "  " + valRight);
             telemetry.update();
-            vikidisch.setPower(0.05);
             sleep (150);
 
             if (valLeft == 255) {
@@ -87,9 +85,7 @@ public class A_Sin_Sin extends Methods {
                 vpered(100, 0.4);
                 stop_all();
                 sleep(2000);
-                vikidisch.setPower(0.5);
                 sleep(2000);
-                vikidisch.setPower(0.05);
                 nazad(220, 0.4);
                 vlevo(400, 0.25);
                 vpered(250, 0.3);
@@ -104,9 +100,7 @@ public class A_Sin_Sin extends Methods {
                 vpered(100, 0.4);
                 stop_all();
                 sleep(2000);
-                vikidisch.setPower(0.5);
                 sleep(2000);
-                vikidisch.setPower(0.05);
                 nazad(220, 0.4);
                 vpravo(500, 0.25);
                 vpered(250, 0.3);
@@ -121,9 +115,7 @@ public class A_Sin_Sin extends Methods {
                 vpered(100, 0.4);
                 stop_all();
                 sleep(2000);
-                vikidisch.setPower(0.5);
                 sleep(2000);
-                vikidisch.setPower(0.05);
                 nazad(220, 0.4);
                 vpravo(500, 0.25);
                 vpravo(850, 0.25);

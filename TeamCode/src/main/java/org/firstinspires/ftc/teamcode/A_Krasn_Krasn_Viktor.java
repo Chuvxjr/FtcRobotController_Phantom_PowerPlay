@@ -61,12 +61,11 @@ public class A_Krasn_Krasn_Viktor extends Methods {
         leftB = hardwareMap.dcMotor.get("lr");
         rightF = hardwareMap.dcMotor.get("rf");
         rightB = hardwareMap.dcMotor.get("rr");
-        krut = hardwareMap.dcMotor.get("kr");
-        vobla = hardwareMap.dcMotor.get("vl");
-        zaxvat = hardwareMap.crservo.get("zx");
-        vikidisch = hardwareMap.crservo.get("vs");
+        pisun = hardwareMap.crservo.get("pis");
         pod = hardwareMap.dcMotor.get("pod");
-        sos = hardwareMap.dcMotor.get("sos");
+        drin = hardwareMap.dcMotor.get("drin");
+        big = hardwareMap.crservo.get("big");
+        zaxvat = hardwareMap.crservo.get("zx");
 
         initGyro();
         waitForStart();
@@ -75,7 +74,6 @@ public class A_Krasn_Krasn_Viktor extends Methods {
         while (opModeIsActive()) {
             telemetry.addData("Values", valLeft + "  " + valRight);
             telemetry.update();
-            vikidisch.setPower(0.05);
 
             if (valLeft == 255) {
                 vikidish_castom(500);
@@ -91,11 +89,9 @@ public class A_Krasn_Krasn_Viktor extends Methods {
                 stop_all();
                 sleep(2000);
                 vikidish_castom(-1000);
-                vikidisch.setPower(0.5);
                 sleep(2000);
                 nazad(170, 0.4);
                 vikidish_castom(1000);
-                vikidisch.setPower(0.05);
                 vpravo(400, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
@@ -114,11 +110,9 @@ public class A_Krasn_Krasn_Viktor extends Methods {
                 stop_all();
                 sleep(2000);
                 vikidish_castom(-1000);
-                vikidisch.setPower(0.5);
                 sleep(2000);
                 nazad(170, 0.4);
                 vikidish_castom(1000);
-                vikidisch.setPower(0.05);
                 vlevo(500, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
@@ -137,11 +131,9 @@ public class A_Krasn_Krasn_Viktor extends Methods {
                 stop_all();
                 sleep(2000);
                 vikidish_castom(-1000);
-                vikidisch.setPower(0.5);
                 sleep(2000);
                 nazad(170, 0.4);
                 vikidish_castom(1000);
-                vikidisch.setPower(0.05);
                 vlevo(500, 0.25);
                 vlevo(850, 0.25);
                 vpered(250, 0.3);

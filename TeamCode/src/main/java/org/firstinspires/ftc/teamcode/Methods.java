@@ -7,6 +7,8 @@ import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 import  com.qualcomm.robotcore.hardware.VoltageSensor;
+import com.qualcomm.robotcore.util.ElapsedTime;
+
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
@@ -26,8 +28,8 @@ import java.util.List;
 
 @Autonomous(name= "Methods", group="Autonomous")
 public class Methods extends LinearOpMode {
-    DcMotor leftF, rightF, leftB, rightB, krut, vobla, sos, pod;
-    CRServo zaxvat, vikidisch;
+    DcMotor leftF, rightF, leftB, rightB, pod, drin;
+    CRServo zaxvat, pisun, big;
     BNO055IMU imu;
     Orientation angles;
     VoltageSensor sensor;
@@ -114,7 +116,7 @@ public class Methods extends LinearOpMode {
         sleep(100);
     }
 
-    public void vikidisch_verx(double napr){ //1 - left, -1 - right
+    /*public void vikidisch_verx(double napr){ //1 - left, -1 - right
         kub_verx();
         stop_all();
         sleep(100);
@@ -140,7 +142,7 @@ public class Methods extends LinearOpMode {
         sleep(2000);
         vikidisch.setPower(0.05);
         sleep(500);
-    }
+    }*/
 
 
     public void resetEncoders() {
@@ -570,7 +572,7 @@ public class Methods extends LinearOpMode {
         imu.initialize(parameters);
     }
 
-    public void vobla228() {
+    /*public void vobla228() {
         vobla.setPower(-0.6);
         sleep(500);
         vobla.setPower(0.1);
@@ -586,7 +588,7 @@ public class Methods extends LinearOpMode {
         sleep(300);
         zaxvat.setPower(0.53);
         sleep(20);
-    }
+    }*/
 
     double getBatteryVoltage() {
         double result = Double.POSITIVE_INFINITY;

@@ -9,8 +9,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 //TODO: ПРОЛЕТАРИЙ, ПЕРЕД ТЕМЬ, КАК МЕНЯТЬ ЧТО-ТО В ГАМАПЕДЕ, ПРОВЕРЬ СНАЧАЛА МАТЬ АГАПА!!!
 @TeleOp(name = "Gamepad_based", group = "TeleOP")
 public class a_Gamepad__based extends OpMode {
-    DcMotor leftF, rightF, leftB, rightB, krut, vobla, pod, sos;
-    CRServo zaxvat, vikidisch;
+    DcMotor leftF, rightF, leftB, rightB, pod, drin;
+    CRServo zaxvat, pisun, big;
     private ElapsedTime runtime = new ElapsedTime(ElapsedTime.Resolution.MILLISECONDS);
 
 
@@ -20,8 +20,12 @@ public class a_Gamepad__based extends OpMode {
         leftB = hardwareMap.dcMotor.get("lr");
         rightF = hardwareMap.dcMotor.get("rf");
         rightB = hardwareMap.dcMotor.get("rr");
-        vikidisch = hardwareMap.crservo.get("vs");
+        pisun = hardwareMap.crservo.get("pis");
         pod = hardwareMap.dcMotor.get("pod");
+        drin = hardwareMap.dcMotor.get("drin");
+        big = hardwareMap.crservo.get("big");
+        zaxvat = hardwareMap.crservo.get("zx");
+
     }
 
 
@@ -88,17 +92,32 @@ public class a_Gamepad__based extends OpMode {
             pod.setPower(0);
             pod.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         }
-        if (gamepad2.b) {
-            vikidisch.setPower(-9);
-        }else if (gamepad2.y){
-            vikidisch.setPower(-0.77);
-        } else if (gamepad2.a){
-            vikidisch.setPower(0.7);
-        }else if (gamepad2.x){
-            vikidisch.setPower(0.6);
-        }else {
-            vikidisch.setPower(0.05);
+        if (gamepad2.left_bumper){
+            pisun.setPower(0.8 );
+        } else {
+            pisun.setPower(0);
         }
+        if (gamepad2.a) {
+            drin.setPower(1);
+        }  else if (gamepad2.y){
+            drin.setPower(-1);
+        } else {
+            drin.setPower(0);
+        }
+        if (gamepad2.b){
+            zaxvat.setPower(0.2);
+        } else  if (gamepad2.x){
+            zaxvat.setPower(0);
+        } else {
+            zaxvat.setPower(-0.2);
+        }
+
+        if (gamepad2.right_bumper){
+            big.setPower(1);
+        } else {
+            big.setPower(-1);
+        }
+
 
         /*if (pwrTrigger5 != 0) {
             vobla.setPower(0.5 * pwrTrigger5);
