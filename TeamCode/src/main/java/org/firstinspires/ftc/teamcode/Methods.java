@@ -105,8 +105,20 @@ public class Methods extends LinearOpMode {
     }
 
     public void vikidish_castom(int uroven){
+        drin.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        drin.setTargetPosition(uroven);
+        drin.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        drin.setPower(1);
+        while ((opModeIsActive() && (pod.isBusy()))){
+        }
+        drin.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        drin.setPower(0);
+        sleep(100);
+    }
+
+    public void drin_castom(int uroven){
         pod.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        pod.setTargetPosition(uroven);
+        pod.setTargetPosition(-uroven);
         pod.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         pod.setPower(1);
         while ((opModeIsActive() && (pod.isBusy()))){
@@ -161,10 +173,10 @@ public class Methods extends LinearOpMode {
         leftB.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rightB.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rightF.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        leftF.setTargetPosition(-pos);
-        rightB.setTargetPosition(pos);
-        rightF.setTargetPosition(-pos);
-        leftB.setTargetPosition(pos);
+        leftF.setTargetPosition(pos);
+        rightB.setTargetPosition(-pos);
+        rightF.setTargetPosition(pos);
+        leftB.setTargetPosition(-pos);
         leftF.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         leftB.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         rightF.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -306,10 +318,10 @@ public class Methods extends LinearOpMode {
         leftB.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rightB.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rightF.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        leftF.setTargetPosition(-pos);
-        rightB.setTargetPosition(pos);
-        rightF.setTargetPosition(pos);
-        leftB.setTargetPosition(-pos);
+        leftF.setTargetPosition(pos);
+        rightB.setTargetPosition(-pos);
+        rightF.setTargetPosition(-pos);
+        leftB.setTargetPosition(pos);
         leftF.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         leftB.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         rightF.setMode(DcMotor.RunMode.RUN_TO_POSITION);

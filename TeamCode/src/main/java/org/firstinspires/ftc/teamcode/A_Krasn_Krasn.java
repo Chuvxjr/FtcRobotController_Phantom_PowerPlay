@@ -45,8 +45,8 @@ public class A_Krasn_Krasn extends Methods {
     private static float offsetX = 0f / 8f;//changing this moves the three rects and the three circles left or right, range : (-2, 2) not inclusive
     private static float offsetY = 0f / 8f;//changing this moves the three rects and circles up or down, range: (-4, 4) not inclusive
 
-    private static float[] leftPos = {6.1f / 8f + offsetX, 4f / 8f + offsetY};
-    private static float[] rightPos = {5.3f / 8f + offsetX, 4 / 8f + offsetY};
+    private static float[] leftPos = {2.3f / 8f + offsetX, 4f / 8f + offsetY};
+    private static float[] rightPos = {3.2f / 8f + offsetX, 4 / 8f + offsetY};
 
     private final int rows = 640;
     private final int cols = 480;
@@ -77,58 +77,23 @@ public class A_Krasn_Krasn extends Methods {
 
             if (valLeft == 255) {
                 vikidish_castom(500);
-                vpered(730, 0.25);
-                sleep(1000);
-                nazad(70, 0.25);
-                sleep(250);
+                vpered(880, 0.25);
                 vpravo(390, 0.25);
-                vikidish_castom(3900);
-                vpered(170, 0.4);
-                stop_all();
-                sleep(2000);
-                vikidish_castom(-1000);
-                sleep(2000);
-                nazad(170, 0.4);
-                vikidish_castom(1000);
                 vpravo(400, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
                 sleep(30000);
             } else if (valRight == 255) {
                 vikidish_castom(500);
-                vpered(730, 0.25);
-                sleep(1000);
-                nazad(70, 0.25);
-                sleep(250);
-                vpravo(390, 0.25);
-                vikidish_castom(3900);
-                vpered(170, 0.4);
-                stop_all();
-                sleep(2000);
-                vikidish_castom(-1000);
-                sleep(2000);
-                nazad(170, 0.4);
-                vikidish_castom(1000);
-                vlevo(500, 0.25);
+                vpered(880, 0.25);
+                vlevo(100, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
                 sleep(30000);
             } else {
                 vikidish_castom(500);
-                vpered(730, 0.25);
-                sleep(1000);
-                nazad(70, 0.25);
-                sleep(250);
-                vpravo(390, 0.25);
-                vikidish_castom(3900);
-                vpered(170, 0.4);
-                stop_all();
-                sleep(2000);
-                vikidish_castom(-1000);
-                sleep(2000);
-                nazad(170, 0.4);
-                vikidish_castom(1000);
-                vlevo(500, 0.25);
+                vpered(880, 0.25);
+                vlevo(100, 0.25);
                 vlevo(850, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
@@ -190,7 +155,7 @@ public class A_Krasn_Krasn extends Methods {
             Core.extractChannel(yCbCrChan2Mat, yCbCrChan2Mat, 2);//takes cb difference and stores
 
             //b&w
-            Imgproc.threshold(yCbCrChan2Mat, thresholdMat, 80, 255, Imgproc.THRESH_BINARY_INV);
+            Imgproc.threshold(yCbCrChan2Mat, thresholdMat, 120, 255, Imgproc.THRESH_BINARY_INV);
 
             //outline/contour
             Imgproc.findContours(thresholdMat, contoursList, new Mat(), Imgproc.RETR_LIST, Imgproc.CHAIN_APPROX_SIMPLE);

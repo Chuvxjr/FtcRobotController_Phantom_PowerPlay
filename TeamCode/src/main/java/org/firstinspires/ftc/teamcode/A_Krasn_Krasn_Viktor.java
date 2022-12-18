@@ -74,72 +74,49 @@ public class A_Krasn_Krasn_Viktor extends Methods {
         while (opModeIsActive()) {
             telemetry.addData("Values", valLeft + "  " + valRight);
             telemetry.update();
+            drin_castom(2000);
+            big.setPower(0.83);
+            drin_castom(-2000);
+            pisun.setPower(0);
+            vpered(1280, 0.25);
+            sleep(1000);
+            vpravo(390, 0.25);
+            drin_castom(3000);
+            big.setPower(-0.77);
+            vpered(200, 0.25);
+            sleep(500);
+            drin_castom(-1000);
+            sleep(200);
+            pisun.setPower(0.4);
+            drin_castom(1000);
+            big.setPower(0.83);
+            nazad(200,0.25);
+            vlevo(400, 0.25);
 
-            if (valLeft == 255) {
+            /*if (valLeft == 255) {
                 vikidish_castom(500);
-                vpered(730, 0.25);
-                sleep(1000);
-                nazad(70, 0.25);
-                sleep(250);
+                vpered(1280, 0.25);
                 vpravo(390, 0.25);
-                vikidish_castom(3900);
-                vpered(170, 0.4);
-                vpered(200, 0.25);
-                nazad(100, 0.25);
-                stop_all();
-                sleep(2000);
-                vikidish_castom(-1000);
-                sleep(2000);
-                nazad(170, 0.4);
-                vikidish_castom(1000);
                 vpravo(400, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
                 sleep(30000);
             } else if (valRight == 255) {
                 vikidish_castom(500);
-                vpered(730, 0.25);
-                sleep(1000);
-                nazad(70, 0.25);
-                sleep(250);
-                vpravo(390, 0.25);
-                vikidish_castom(3900);
-                vpered(170, 0.4);
-                vpered(200, 0.25);
-                nazad(100, 0.25);
-                stop_all();
-                sleep(2000);
-                vikidish_castom(-1000);
-                sleep(2000);
-                nazad(170, 0.4);
-                vikidish_castom(1000);
-                vlevo(500, 0.25);
+                vpered(880, 0.25);
+                vlevo(100, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
                 sleep(30000);
             } else {
                 vikidish_castom(500);
-                vpered(730, 0.25);
-                sleep(1000);
-                nazad(70, 0.25);
-                sleep(250);
-                vpravo(390, 0.25);
-                vikidish_castom(3900);
-                vpered(170, 0.4);
-                vpered(200, 0.25);
-                nazad(100, 0.25);
-                stop_all();
-                sleep(2000);
-                vikidish_castom(-1000);
-                sleep(2000);
-                nazad(170, 0.4);
-                vikidish_castom(1000);
-                vlevo(500, 0.25);
+                vpered(880, 0.25);
+                vlevo(100, 0.25);
                 vlevo(850, 0.25);
                 vpered(250, 0.3);
                 vikidish_castom(-3800);
                 sleep(30000);
-            }
+            }*/
         }}
             /*
             if (valLeft == 255) {
@@ -196,7 +173,7 @@ public class A_Krasn_Krasn_Viktor extends Methods {
             Core.extractChannel(yCbCrChan2Mat, yCbCrChan2Mat, 2);//takes cb difference and stores
 
             //b&w
-            Imgproc.threshold(yCbCrChan2Mat, thresholdMat, 80, 255, Imgproc.THRESH_BINARY_INV);
+            Imgproc.threshold(yCbCrChan2Mat, thresholdMat, 120, 255, Imgproc.THRESH_BINARY_INV);
 
             //outline/contour
             Imgproc.findContours(thresholdMat, contoursList, new Mat(), Imgproc.RETR_LIST, Imgproc.CHAIN_APPROX_SIMPLE);

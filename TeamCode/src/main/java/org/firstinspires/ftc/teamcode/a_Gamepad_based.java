@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 //TODO: ПРОЛЕТАРИЙ, ПЕРЕД ТЕМЬ, КАК МЕНЯТЬ ЧТО-ТО В ГАМАПЕДЕ, ПРОВЕРЬ СНАЧАЛА МАТЬ АГАПА!!!
 @TeleOp(name = "Gamepad_based", group = "TeleOP")
-public class a_Gamepad__based extends OpMode {
+public class a_Gamepad_based extends OpMode {
     DcMotor leftF, rightF, leftB, rightB, pod, drin;
     CRServo zaxvat, pisun, big;
     private ElapsedTime runtime = new ElapsedTime(ElapsedTime.Resolution.MILLISECONDS);
@@ -85,38 +85,39 @@ public class a_Gamepad__based extends OpMode {
 
         }
         if (gamepad2.dpad_down){
-            pod.setPower(-1);
-        } else if (gamepad2.dpad_up){
             pod.setPower(1);
+        } else if (gamepad2.dpad_up){
+            pod.setPower(-1);
         } else {
             pod.setPower(0);
             pod.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         }
         if (gamepad2.left_bumper){
-            pisun.setPower(0.8 );
+            pisun.setPower(0.4);
         } else {
             pisun.setPower(0);
         }
+
         if (gamepad2.a) {
-            drin.setPower(1);
-        }  else if (gamepad2.y){
             drin.setPower(-1);
+        }  else if (gamepad2.y){
+            drin.setPower(1);
         } else {
             drin.setPower(0);
         }
-        if (gamepad2.b){
-            zaxvat.setPower(0.2);
-        } else  if (gamepad2.x){
-            zaxvat.setPower(0);
-        } else {
-            zaxvat.setPower(-0.2);
-        }
+         if (gamepad2.b){
+             zaxvat.setPower(0.18);
+         } else  if (gamepad2.x){
+             zaxvat.setPower(0);
+         } else {
+             zaxvat.setPower(-0.24);
+         }
 
-        if (gamepad2.right_bumper){
-            big.setPower(1);
-        } else {
-            big.setPower(-1);
-        }
+         if (gamepad2.right_bumper){
+             big.setPower(-0.77);
+         } else {
+             big.setPower(0.83);
+         }
 
 
         /*if (pwrTrigger5 != 0) {
