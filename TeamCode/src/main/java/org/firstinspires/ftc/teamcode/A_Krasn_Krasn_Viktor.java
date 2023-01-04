@@ -45,8 +45,8 @@ public class A_Krasn_Krasn_Viktor extends Methods {
     private static float offsetX = 0f / 8f;//changing this moves the three rects and the three circles left or right, range : (-2, 2) not inclusive
     private static float offsetY = 0f / 8f;//changing this moves the three rects and circles up or down, range: (-4, 4) not inclusive
 
-    private static float[] leftPos = {6.1f / 8f + offsetX, 4f / 8f + offsetY};
-    private static float[] rightPos = {5.3f / 8f + offsetX, 4 / 8f + offsetY};
+    private static float[] leftPos = {2.0f / 8f + offsetX, 4f / 8f + offsetY};
+    private static float[] rightPos = {2.8f / 8f + offsetX, 4 / 8f + offsetY};
 
     private final int rows = 640;
     private final int cols = 480;
@@ -74,24 +74,90 @@ public class A_Krasn_Krasn_Viktor extends Methods {
         while (opModeIsActive()) {
             telemetry.addData("Values", valLeft + "  " + valRight);
             telemetry.update();
-            drin_castom(2000);
-            big.setPower(0.83);
-            drin_castom(-2000);
-            pisun.setPower(0);
-            vpered(1280, 0.25);
-            sleep(1000);
-            vpravo(390, 0.25);
-            drin_castom(3000);
-            big.setPower(-0.77);
-            vpered(200, 0.25);
-            sleep(500);
-            drin_castom(-1000);
-            sleep(200);
-            pisun.setPower(0.4);
-            drin_castom(1000);
-            big.setPower(0.83);
-            nazad(200,0.25);
-            vlevo(400, 0.25);
+            if (valLeft == 255) {
+                drin_castom(2000);
+                big.setPower(0.8);
+                drin_castom(-1700);
+                sleep(1300);
+                pisun.setPower(0);
+                vpered(730, 0.25);
+                vpered(300, 0.25);
+                nazad(250, 0.25);
+                sleep(1000);
+                razvarot(-275, 0.25);
+                vpered(300, 0.25);
+                drin_castom(3500);
+                big.setPower(-0.77);
+                vpered(180, 0.25);
+                sleep(500);
+                drin_castom(-1000);
+                pisun.setPower(0.4);
+                sleep(1000);
+                drin_castom(1500);
+                big.setPower(0.8);
+                nazad(300, 0.25);
+                razvarot(275, 0.25);
+                razvarot(550,0.25);
+                vpered(730, 0.3);
+                drin_castom(-3000);
+                stop_all();
+                sleep(30000);
+            } else if(valRight == 255){
+                drin_castom(2000);
+                big.setPower(0.8);
+                drin_castom(-1700);
+                sleep(1300);
+                pisun.setPower(0);
+                vpered(730, 0.25);
+                vpered(300, 0.25);
+                nazad(250, 0.25);
+                sleep(1000);
+                razvarot(-275, 0.25);
+                vpered(300, 0.25);
+                drin_castom(3500);
+                big.setPower(-0.77);
+                vpered(180, 0.25);
+                sleep(500);
+                drin_castom(-1000);
+                pisun.setPower(0.4);
+                sleep(1000);
+                drin_castom(1500);
+                big.setPower(0.8);
+                nazad(300,0.25);
+                razvarot(275, 0.25);
+                vpered(200, 0.25);
+                drin_castom(-3000);
+                stop_all();
+                sleep(30000);
+            } else{
+                drin_castom(2000);
+                big.setPower(0.8);
+                drin_castom(-1700);
+                sleep(1300);
+                pisun.setPower(0);
+                vpered(730, 0.25);
+                vpered(300, 0.25);
+                nazad(250, 0.25);
+                sleep(1000);
+                razvarot(-275, 0.25);
+                vpered(300, 0.25);
+                drin_castom(3500);
+                big.setPower(-0.77);
+                vpered(180, 0.25);
+                sleep(500);
+                drin_castom(-1000);
+                pisun.setPower(0.4);
+                sleep(1000);
+                drin_castom(1500);
+                big.setPower(0.8);
+                nazad(300,0.25);
+                razvarot(275, 0.25);
+                razvarot(-550,0.25);
+                vpered(630, 0.3);
+                drin_castom(-3000);
+                stop_all();
+                sleep(30000);
+            }
 
             /*if (valLeft == 255) {
                 vikidish_castom(500);

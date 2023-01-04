@@ -78,22 +78,28 @@ public class A_Sin_Sin_Viktor extends Methods {
 
             drin_castom(2000);
             big.setPower(0.8);
-            drin_castom(-2000);
+            drin_castom(-2200);
+            sleep(500);
             pisun.setPower(0);
             vpered(730, 0.25);
             sleep(1000);
-            vlevo(390, 0.25);
-            drin_castom(3000);
+            razvarot(550, 0.25);
+            vpered(390, 0.25);
+            razvarot(-550, 0.25);
+            drin_castom(3500);
             big.setPower(-0.77);
             vpered(200, 0.25);
             sleep(500);
             drin_castom(-1000);
             sleep(200);
             pisun.setPower(0.4);
-            drin_castom(2000);
+            drin_castom(1500);
             big.setPower(0.8);
             nazad(200,0.25);
-            vpravo(400, 0.25);
+            razvarot(-550, 0.25);
+            vpered(400, 0.25);
+            razvarot(550, 0.25);
+            drin_castom(-3000);
             stop_all();
             sleep(30000);
         }}

@@ -5,12 +5,14 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.hardware.DigitalChannel;
 
 //TODO: ПРОЛЕТАРИЙ, ПЕРЕД ТЕМЬ, КАК МЕНЯТЬ ЧТО-ТО В ГАМАПЕДЕ, ПРОВЕРЬ СНАЧАЛА МАТЬ АГАПА!!!
 @TeleOp(name = "Gamepad_based", group = "TeleOP")
 public class a_Gamepad_based extends OpMode {
     DcMotor leftF, rightF, leftB, rightB, pod, drin;
     CRServo zaxvat, pisun, big;
+    DigitalChannel knopka;
     private ElapsedTime runtime = new ElapsedTime(ElapsedTime.Resolution.MILLISECONDS);
 
 
@@ -25,7 +27,8 @@ public class a_Gamepad_based extends OpMode {
         drin = hardwareMap.dcMotor.get("drin");
         big = hardwareMap.crservo.get("big");
         zaxvat = hardwareMap.crservo.get("zx");
-
+        knopka = hardwareMap.get(DigitalChannel.class, "knp");
+        knopka.setMode(DigitalChannel.Mode.INPUT);
     }
 
 
@@ -44,6 +47,13 @@ public class a_Gamepad_based extends OpMode {
         float Stick2Y = (float) (gamepad1.left_stick_y * 0.3);
         //korob.setTargetPosition(720);
         double power = -1;
+        if (knopka.getState() == true) {
+            telemetry.addData("Digital Touch", "Is Not Pressed");
+            telemetry.update();
+        } else {
+            telemetry.addData("Digital Touch", "Is Pressed");
+            telemetry.update();
+        }
         // занято 1 геймпад: стики , триггеры , бампера
         // занято 2 геймпад: крестовина вверх и вниз, бампера, буквы, триггеры
 
@@ -86,11 +96,24 @@ public class a_Gamepad_based extends OpMode {
         }
         if (gamepad2.dpad_down){
             pod.setPower(1);
-        } else if (gamepad2.dpad_up){
+        } else if (gamepad2.dpad_up) {
             pod.setPower(-1);
+        } else if (gamepad2.dpad_left) {
+            pod.setPower(-0.01);
+        }else if(gamepad2.dpad_right){
+            pod.setPower(-0.1);
         } else {
             pod.setPower(0);
             pod.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        }
+        if (gamepad1.dpad_down){
+            drin.setPower(1);
+        } else if (gamepad1.dpad_up){
+            while (knopka.getState() == true){
+                drin.setPower(-1);
+            }
+        } else{
+            drin.setPower(0);
         }
         if (gamepad2.left_bumper){
             pisun.setPower(0.4);
@@ -99,9 +122,9 @@ public class a_Gamepad_based extends OpMode {
         }
 
         if (gamepad2.a) {
-            drin.setPower(-1);
-        }  else if (gamepad2.y){
             drin.setPower(1);
+        }  else if (gamepad2.y){
+            drin.setPower(-1);
         } else {
             drin.setPower(0);
         }
@@ -114,9 +137,9 @@ public class a_Gamepad_based extends OpMode {
          }
 
          if (gamepad2.right_bumper){
-             big.setPower(-0.77);
+             big.setPower(-0.8);
          } else {
-             big.setPower(0.83);
+             big.setPower(0.9);
          }
 
 

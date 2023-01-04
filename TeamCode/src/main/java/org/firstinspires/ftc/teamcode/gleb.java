@@ -29,9 +29,9 @@ import java.util.List;
  * monitor: 640 x 480
  *YES
  */
-@Autonomous(name= "A_Krasn_Krasn", group="Autonomous")
+@Autonomous(name= "gleb", group="Autonomous")
 //
-public class A_Krasn_Krasn extends Methods {
+public class gleb extends Methods {
     private final ElapsedTime runtime = new ElapsedTime();
 
 
@@ -45,8 +45,8 @@ public class A_Krasn_Krasn extends Methods {
     private static float offsetX = 0f / 8f;//changing this moves the three rects and the three circles left or right, range : (-2, 2) not inclusive
     private static float offsetY = 0f / 8f;//changing this moves the three rects and circles up or down, range: (-4, 4) not inclusive
 
-    private static float[] leftPos = {2.3f / 8f + offsetX, 4f / 8f + offsetY};
-    private static float[] rightPos = {3.2f / 8f + offsetX, 4 / 8f + offsetY};
+    private static float[] leftPos = {2f / 8f + offsetX, 4f / 8f + offsetY};
+    private static float[] rightPos = {3f / 8f + offsetX, 4 / 8f + offsetY};
 
     private final int rows = 640;
     private final int cols = 480;
@@ -74,13 +74,14 @@ public class A_Krasn_Krasn extends Methods {
         while (opModeIsActive()) {
             telemetry.addData("Values", valLeft + "  " + valRight);
             telemetry.update();
+            sleep (150);
 
             if (valLeft == 255) {
                 vikidish_castom(500);
                 vpered(800, 0.25);
                 sleep(250);
                 razvarot(550,0.25);
-                vpered(730, 0.3);
+                vpered(700, 0.3);
                 sleep(30000);
             } else if (valRight  == 255) {
                 vikidish_castom(500);
@@ -92,7 +93,7 @@ public class A_Krasn_Krasn extends Methods {
                 vpered(800, 0.25);
                 sleep(250);
                 razvarot(-550,0.25);
-                vpered(730, 0.3);
+                vpered(700, 0.3);
                 sleep(30000);
             }
         }}
@@ -217,4 +218,5 @@ public class A_Krasn_Krasn extends Methods {
         }
     }
 }
+
 

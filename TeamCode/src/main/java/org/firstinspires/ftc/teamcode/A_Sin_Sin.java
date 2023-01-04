@@ -45,8 +45,8 @@ public class A_Sin_Sin extends Methods {
     private static float offsetX = 0f / 8f;//changing this moves the three rects and the three circles left or right, range : (-2, 2) not inclusive
     private static float offsetY = 0f / 8f;//changing this moves the three rects and circles up or down, range: (-4, 4) not inclusive
 
-    private static float[] leftPos = {2.15f / 8f + offsetX, 4f / 8f + offsetY};
-    private static float[] rightPos = {3.05f / 8f + offsetX, 4 / 8f + offsetY};
+    private static float[] leftPos = {2f / 8f + offsetX, 4f / 8f + offsetY};
+    private static float[] rightPos = {3f / 8f + offsetX, 4 / 8f + offsetY};
 
     private final int rows = 640;
     private final int cols = 480;
@@ -76,26 +76,24 @@ public class A_Sin_Sin extends Methods {
             telemetry.update();
             sleep (150);
 
-            if (valRight == 255) {
+            if (valLeft == 255) {
                 vikidish_castom(500);
                 vpered(800, 0.25);
                 sleep(250);
-                vlevo(370, 0.25);
-                vlevo(400, 0.25);
-                vpered(250, 0.3);
+                razvarot(540,0.25);
+                vpered(700, 0.3);
                 sleep(30000);
-            } else if (valLeft  == 255) {
+            } else if (valRight  == 255) {
                 vikidish_castom(500);
                 vpered(800, 0.25);
-                vpravo(200, 0.25);
                 vpered(250, 0.3);
                 sleep(30000);
             } else {
                 vikidish_castom(500);
                 vpered(800, 0.25);
                 sleep(250);
-                vpravo(850, 0.25);
-                vpered(250, 0.3);
+                razvarot(-540,0.25);
+                vpered(700, 0.3);
                 sleep(30000);
             }
         }}
