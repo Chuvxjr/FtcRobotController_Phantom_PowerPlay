@@ -116,9 +116,9 @@ public class a_Gamepad_based extends OpMode {
             drin.setPower(0);
         }
         if (gamepad2.left_bumper){
-            pisun.setPower(0.4);
-        } else {
             pisun.setPower(0);
+        } else {
+            pisun.setPower(0.5);
         }
 
         if (gamepad2.a) {

@@ -76,9 +76,8 @@ public class A_Sin_Sin_Viktor extends Methods {
             telemetry.update();
             sleep (150);
 
-            drin_castom(2000);
-            big.setPower(0.8);
-            drin_castom(-2200);
+
+            pisun.setPower(0.5);
             sleep(500);
             pisun.setPower(0);
             vpered(730, 0.25);
